@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .card {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            max-width: 900px;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 2rem;
+            flex: 1;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .form-control {
+            border-radius: 20px;
+        }
+        .text-center a {
+            color: #007bff;
+        }
+    </style>
+    <title>Register Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="col-md-6 p-0">
+                <img src="vecteezy_ai-generated-abstract-composition-of-fashion-pieces_38814182.jpeg" alt="Image">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h2 class="text-center">Log in</h2>
+                    <form>
+                        <div class="form-row mt-4">
+                            <div class="form-group col-md-6">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <a href="homepage.html" class="btn btn-primary btn-block">Log in</a>
+                        <div class="text-center mt-3">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="signup.html">Create new account? Sign up!</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

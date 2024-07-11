@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Admin Page</title>
+    <style>
+        
+        .navbar-brand img {
+            height: 40px; /* Adjust this value as needed */
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-light p-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="navbar-brand">
+                <img src="animal.png" alt="Logo"> <!-- Replace "logo.png" with the path to your logo image -->
+            </a>
+            <div>
+                <a href="#" class="btn btn-outline-secondary">Account</a>
+                <a href="homepage.html" class="btn btn-outline-secondary">Home</a>
+                <a href="index.html" class="btn btn-outline-secondary">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#1" class="list-group-item list-group-item-action active">Content Management</a>
+                    <a href="#2" class="list-group-item list-group-item-action">Analytics</a>
+                    <a href="#3" class="list-group-item list-group-item-action">Messages</a>
+                    <a href="#4" class="list-group-item list-group-item-action">Social Media</a>
+                    <a href="#5" class="list-group-item list-group-item-action">Data Collection</a>
+                </div>
+            </div>
+            <div class="col-md-9" id="1">
+                <h2>Content Management</h2>
+                <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#contentModal">New Content</button>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <h5>Content Title</h5>
+                        <p>Content description...</p>
+                        <button class="btn btn-sm btn-warning">Edit</button>
+                        <a href="lap.html" class="btn btn-sm btn-danger">Delete</a>
+                    </div>
+                    <!-- Repeat for more content -->
+                </div>
+                
+                <!-- Modal for New Content -->
+                <div class="modal fade" id="contentModal" tabindex="-1" role="dialog" aria-labelledby="contentModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="contentModalLabel">New Content</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="contentTitle">Title</label>
+                                        <input type="text" class="form-control" id="contentTitle">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contentDescription">Description</label>
+                                        <textarea class="form-control" id="contentDescription" rows="3"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="mt-5" id="2">Analytics</h2>
+                <canvas id="analyticsChart"></canvas>
+                <button class="btn btn-warning mt-3" onclick="window.print()">Print</button>
+
+                <h2 class="mt-5" id="3">Messages</h2>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <h5>Message from Customer</h5>
+                        <p>Message content...</p>
+                        <button class="btn btn-sm btn-primary">Reply</button>
+                    </div>
+                    <!-- Repeat for more messages -->
+                </div>
+
+                <h2 class="mt-5" id="4">Social Media Integration</h2>
+                <button class="btn btn-primary">Connect to Social Media</button>
+
+                <h2 class="mt-5" id="5">Data Collection</h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Customer Name</th>
+                                <th>Email</th>
+                                <th>Purchase History</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ilhamcassava</td>
+                                <td>Sg15 cloth</td>
+                                <td>Product A, Product B</td>
+                            </tr>
+                            <!-- Repeat for more customers -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script>
+        var ctx = document.getElementById('analyticsChart').getContext('2d');
+        var analyticsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                datasets: [{
+                    label: 'Viewers',
+                    data: [65, 59, 80, 81, 56, 55],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
